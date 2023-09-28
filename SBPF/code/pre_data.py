@@ -112,7 +112,7 @@ else:
     roi=" -b '" + str(insar_roi[1]) + " " + str(insar_roi[3]) + " " + str(insar_roi[0]) + " " + str(insar_roi[2]) + "'"
     print("burst的选择区域："+roi)
     os.chdir('../')
-    os.system("python ../code/topsStack/stackSentinel.py -s ../process/data -d ./data/dem/full_res.dem.wgs84  -a ./data/aux_cal/ -o ./data/orbits -C geometry  -W slc -n '1'"+roi)
+    os.system("python ../code/topsStack/stackSentinel.py -s ../process/data -d ./data/dem/full_res.dem.wgs84  -a ./data/aux_cal/ -o ./data/orbits -C geometry  -W slc"+roi)
     line = open('./run_files/run_01_unpack_topo_reference').readline()
     line = line.replace("\n", "")
     line=str(line)+'0'
