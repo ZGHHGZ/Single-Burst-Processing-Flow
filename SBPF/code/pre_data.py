@@ -100,7 +100,7 @@ else:
     os.chdir('./data')
     data=numpy.loadtxt('stack.txt',dtype=str,delimiter=',')
     ref_params = get_burst_params(data[0][0],data[0][1],int(data[0][2]))
-    sec_params = get_burst_params(data[1][0],data[0][1],int(data[0][2]))
+    sec_params = get_burst_params(data[1][0],data[1][1],int(data[1][2]))
     ref_metadata = download_bursts(([ref_params]))
     is_ascending = ref_metadata.orbit_direction == 'ascending'
     ref_footprint = get_isce2_burst_bbox(ref_params)
